@@ -31,10 +31,11 @@
                 {{ Str::limit($post->output, 300) }}
             </div>
             <p class="px-3 pb-3 text-sm inline-flex gap-2 items-center">
-                <a class="hover:underline" href="">Edit</a>
+                <a class="hover:underline" href="{{ route('post.edit', $post) }}">Edit</a>
                 <span class="h-4 w-px bg-neutral-200"></span>
                 <a class="hover:underline" href="{{ route('post.detail', $post) }}">View</a>
             </p>
         </div>
     @endforeach
+    {{ $posts->links() }}
 </div>

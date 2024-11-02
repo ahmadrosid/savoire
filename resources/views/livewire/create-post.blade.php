@@ -89,7 +89,7 @@
                     </div>
                 </div>
                 <div class="prose prose-sm max-w-none p-3 rounded mb-3 bg-neutral-100 mx-3" wire:stream="output">
-                    {!! $this->rendered_output() !!}
+                    {!! Str::markdown($output, ['renderer' => [ 'soft_break' => "<br />\n"]]) !!}
                 </div>
             </div>
             <div class="px-3 my-3" x-show='!output' x-cloak>

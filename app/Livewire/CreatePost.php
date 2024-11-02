@@ -37,17 +37,6 @@ class CreatePost extends Component
         ]);
     }
 
-    public function rendered_output()
-    {
-
-        $config = [
-            'renderer' => [
-                'soft_break' => "<br />\n",
-            ],
-        ];
-        return Str::markdown($this->output, $config);
-    }
-
     public function resetAll()
     {
         $this->post = '';
