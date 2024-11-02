@@ -26,12 +26,12 @@
 
                 <button
                     @click="
-                    output = 'Thinking...'; 
-                    isGenerating = true; 
-                    $wire.output = '';
-                    await $wire.generatePost();
-                    isGenerating = false;
-                "
+                        output = 'Thinking...'; 
+                        isGenerating = true; 
+                        $wire.output = '';
+                        await $wire.generatePost();
+                        isGenerating = false;
+                    "
                     class="flex items-center gap-2 px-4 py-2 bg-[#0A66C2] text-white rounded-lg hover:opacity-90 transition-colors"
                     :class="{ 'opacity-50 cursor-not-allowed': isGenerating }" :disabled="isGenerating">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -49,9 +49,9 @@
 
                 <button
                     @click="
-                    await $wire.resetAll();
-                    output = false;
-                "
+                        await $wire.resetAll();
+                        output = false;
+                    "
                     class="flex items-center gap-2 px-4 py-2 bg-neutral-100 rounded-lg hover:bg-neutral-200 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
