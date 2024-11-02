@@ -1,20 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'index', ['component' => 'create-post'])->name('create');
-Route::view('/copy-cat', 'index', ['component' => 'copy-cat']);
-Route::view('/history', 'index', ['component' => 'post-history']);
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-require __DIR__.'/auth.php';
+Route::view('/', 'index', ['component' => 'create-post', 'title' => 'Create LinkedIn Post'])->name('create');
+Route::view('/create', 'index', ['component' => 'create-post', 'title' => 'Create LinkedIn Post']);
+Route::view('/copy-cat', 'index', ['component' => 'copy-cat', 'title' => 'Copy what works!']);
+Route::view('/history', 'index', ['component' => 'post-history', 'title' => 'Post history']);

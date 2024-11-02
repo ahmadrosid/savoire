@@ -1,5 +1,4 @@
 <div>
-    <x-slot name="title">Create LinkedIn Post</x-slot>
     <!-- Header -->
     <div class="space-y-2 mb-3">
         <h1 class="text-3xl font-bold">Create LinkedIn Post</h1>

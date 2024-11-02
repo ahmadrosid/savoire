@@ -7,6 +7,7 @@ use Ahmadrosid\Laravel\Anthropic\AnthropicAI;
 class PostGenerator
 {
     public string $prompt;
+    public string $prompt_copy_cat;
     public string $model = 'claude-3-5-sonnet-20241022';
 
     public function __construct()
@@ -58,6 +59,42 @@ Your final output should be formatted as follows:
 
 Remember to tailor the post to the specific field, incorporate the provided content, and maintain the desired tone throughout.
 PROMPT;
+
+        $this->prompt_copy_cat = <<<'PROMPT'
+You are tasked with analyzing the writing style and tone of a LinkedIn post and then creating a similar post on a different topic. Follow these steps carefully:
+
+1. First, read and analyze the following LinkedIn post:
+
+<template>
+{{TEMPLATE_POST}}
+</templte>
+
+2. Analyze the writing style and tone of the post. Consider elements such as:
+   - Length of sentences and paragraphs
+   - Use of punctuation
+   - Formal or informal language
+   - Use of personal anecdotes or examples
+   - Inclusion of questions or calls to action
+   - Overall structure (e.g., introduction, body, conclusion)
+   - Any unique stylistic elements
+
+3. Now, you will create a new post on the following topic:
+
+<content>
+{{CONTENT}}
+</content>
+
+4. Write a new LinkedIn post that follows the writing style and tone you analyzed from the original post. Apply the stylistic elements you observed to this new topic.
+
+5. Important: Do not copy any specific content or examples from the original post. Your goal is to emulate the style and tone, not the content. The new post should be entirely original and focused on the new topic.
+
+6. Present your new LinkedIn post within <linkedin_post> tags.
+
+Please keep this in mind as you work on your new post:
+- Don't put any hashtags
+
+Remember, the key is to capture the essence of the writing style and tone, not to replicate the content. Your new post should feel similar in style to the original, but be completely unique in its content and tailored to the new topic.
+PROMPT;
     }
 
     public function generate($content, $tone)
@@ -66,6 +103,31 @@ PROMPT;
             ['{{CONTENT}}', '{{TONE}}'],
             [$content, $tone],
             $this->prompt
+        );
+        return AnthropicAI::chat()->createStreamed([
+            'model' => $this->model,
+            'temperature' => 0.2,
+            'max_tokens' => 1024,
+            'stop_sequences' => ["</linkedin_post>"],
+            'messages' => [
+                [
+                    'role' => 'user',
+                    'content' => $prompt
+                ],
+                [
+                    'role' => 'assistant',
+                    'content' => '<linkedin_post>'
+                ],
+            ],
+        ]);
+    }
+
+    public function copyStyle($template, $content)
+    {
+        $prompt = str_replace(
+            ['{{CONTENT}}', '{{TEMPLATE}}'],
+            [$content, $template],
+            $this->prompt_copy_cat
         );
         return AnthropicAI::chat()->createStreamed([
             'model' => $this->model,

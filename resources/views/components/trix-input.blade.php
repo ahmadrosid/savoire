@@ -1,6 +1,6 @@
 @props(['id', 'name', 'value' => ''])
 
-<div class="border rounded-md overflow-hidden"
+<div class="border rounded-md overflow-hidden prose-sm max-w-none prose-ol:list-decimal prose-ul:list-disc"
     x-data="{
         content: @entangle($attributes->wire('model')),
     }"
@@ -25,7 +25,7 @@
         'id' => $id,
         'x-ref' => 'text',
         'toolbar' => $id . '_toolbar',
-        'class' => "trix-content focus:ring-none bg-neutral-50 -mt-2 pt-5 prose-sm max-w-none",
+        'class' => "trix-content focus:ring-none bg-neutral-50 -mt-2 pt-5",
         'input' => "{$id}_input",
         'data-controller' => 'rich-text rich-text-uploader rich-text-mentions',
         'data-rich-text-uploader-accept-files-value' => 'false',
