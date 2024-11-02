@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Lib\PostGenerator;
 use Illuminate\Support\Str;
 use App\Models\Post;
+use Livewire\Attributes\On;
 
 class CopyCat extends Component
 {
@@ -14,13 +15,45 @@ class CopyCat extends Component
     public string $output = '';
     public string $template = '';
 
+    public array $messages = [];
+
     public function generatePost()
     {
         $this->output = '';
+        $messages = (new PostGenerator())->preparePromptAnalyze(
+            $this->template
+        );
+        $response = (new PostGenerator())->analyzeStyle($messages);
+    
+        $output = '';
+        foreach ($response as $block) {
+            foreach ($block->choices as $choice) {
+                if ($choice->delta) {
+                    $content = $choice->delta->content;
+                    $output .= $content;
+                    $this->stream(to: 'output', content: $content, replace: $output === '');
+                }
+            }
+        }
+
+        $this->messages[] = [
+            'role' => 'assistant',
+            'content' => $output
+        ];
+
+        $this->dispatch('performCopyStyle');
+    }
+
+    #[On('performCopyStyle')]
+    public function performCopyStyle()
+    {
+        $this->output = '';
         $response = (new PostGenerator())->copyStyle(
-            $this->template, $this->post,
+            $this->messages, $this->post,
         );
 
+        logger()->info($this->messages);
+    
         foreach ($response as $block) {
             foreach ($block->choices as $choice) {
                 if ($choice->delta) {
