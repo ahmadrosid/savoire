@@ -5,8 +5,9 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Lib\PostGenerator;
 use Illuminate\Support\Str;
+use App\Models\Post;
 
-class EditorPage extends Component
+class CreatePost extends Component
 {
     public string $post = '';
     public string $tone = '';
@@ -28,6 +29,12 @@ class EditorPage extends Component
                 }
             }
         }
+
+        Post::create([
+            'content' => $this->post,
+            'tone' => $this->tone,
+            'output' => $this->output,
+        ]);
     }
 
     public function rendered_output()
@@ -50,6 +57,6 @@ class EditorPage extends Component
 
     public function render()
     {
-        return view('livewire.editor-page');
+        return view('livewire.create-post');
     }
 }

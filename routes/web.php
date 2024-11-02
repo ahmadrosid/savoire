@@ -3,9 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'index', ['component' => 'create-post']);
+Route::view('/copy-cat', 'index', ['component' => 'copy-cat']);
+Route::view('/history', 'index', ['component' => 'history']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
