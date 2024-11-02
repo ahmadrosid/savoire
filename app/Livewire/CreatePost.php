@@ -4,7 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Lib\PostGenerator;
-use Illuminate\Support\Str;
+use App\Lib\HtmlToMarkdown;
 use App\Models\Post;
 
 class CreatePost extends Component
@@ -31,7 +31,7 @@ class CreatePost extends Component
         }
 
         Post::create([
-            'content' => $this->post,
+            'content' => (new HtmlToMarkdown())->convert($this->post),
             'tone' => $this->tone,
             'output' => $this->output,
         ]);
