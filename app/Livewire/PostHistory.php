@@ -15,7 +15,7 @@ class PostHistory extends Component
     public function render()
     {
         return view('livewire.post-history', [
-            'posts' => Post::all(),
+            'posts' => Post::orderByDesc('created_at')->paginate(10),
         ]);
     }
 }
