@@ -9,7 +9,7 @@
             </a>
         </div>
         <div class="overflow-hidden bg-white border border-neutral-200 rounded-lg relative">
-            <copy-icon onclick="navigator.clipboard.writeText(@js($post->output))" class="size-4 absolute top-2 right-6"></copy-icon>
+            <copy-icon onclick="navigator.clipboard.writeText(@js($post->output))" class="size-4 absolute top-3 right-3"></copy-icon>
             <div class="p-6 prose prose-sm max-w-none">
                 {!! Str::markdown($post->output, ['renderer' => ['soft_break' => "<br />\n"]]) !!}
             </div>
