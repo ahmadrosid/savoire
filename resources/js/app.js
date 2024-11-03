@@ -1,5 +1,6 @@
 import "./libs/trix";
 import './bootstrap';
+import 'copy-icon';
 
 import Alpine from 'alpinejs';
 

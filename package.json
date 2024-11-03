@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "@tailwindcss/typography": "^0.5.15",
+        "copy-icon": "^1.0.1",
         "tailwind-scrollbar-hide": "^1.1.7"
     }
 }
