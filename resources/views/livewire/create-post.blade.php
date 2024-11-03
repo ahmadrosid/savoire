@@ -62,10 +62,16 @@
                 </button>
             </div>
 
+
             <!-- Editor -->
-            <div class="space-y-4 bg-white mt-6 rounded-xl">
+            <div class="space-y-4 bg-white mt-6 mb-6 rounded-xl">
                 <x-trix-input id="post" name="post" wire:model="post" />
             </div>
+
+            <p class="font-medium mb-3">Record Audio:</p>
+            <audio-recorder
+                class="p-2 rounded-md border border-neutral-200 bg-neutral-50"
+                api-endpoint="https://your-api-endpoint.com/upload"></audio-recorder>
         </div>
 
         <div class="bg-white border border-neutral-200 rounded-lg overflow-hidden">
