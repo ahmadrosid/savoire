@@ -69,9 +69,6 @@
             </div>
 
             <p class="font-medium mb-3">Record Audio:</p>
-            <audio-recorder
-                class="p-2 rounded-md border border-neutral-200 bg-neutral-50"
-                api-endpoint="https://your-api-endpoint.com/upload"></audio-recorder>
         </div>
 
         <div class="bg-white border border-neutral-200 rounded-lg overflow-hidden">
