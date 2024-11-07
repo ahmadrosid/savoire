@@ -17,7 +17,7 @@
     />
 
     <trix-toolbar
-        class="[&_.trix-button]:bg-white [&_.trix-button.trix-active]:bg-neutral-300"
+        class="[&_.trix-button]:bg-white [&_.trix-button.trix-active]:bg-gray-300"
         id="{{ $id }}_toolbar"
     ></trix-toolbar>
 
@@ -25,7 +25,7 @@
         'id' => $id,
         'x-ref' => 'text',
         'toolbar' => $id . '_toolbar',
-        'class' => "trix-content focus:ring-none bg-neutral-50 -mt-2 pt-5",
+        'class' => "trix-content focus:ring-none bg-gray-50 -mt-2 pt-5",
         'input' => "{$id}_input",
         'data-controller' => 'rich-text rich-text-uploader rich-text-mentions',
         'data-rich-text-uploader-accept-files-value' => 'false',

@@ -2,7 +2,7 @@
     <!-- Header -->
     <div class="space-y-2 mb-3">
         <h1 class="text-3xl font-bold">Copy what works!</h1>
-        <p class="text-neutral-500">
+        <p class="text-gray-500">
             Turn your idea into a successful LinkedIn post by adapting proven content formats with your unique perspective.
         </p>
     </div>
@@ -10,7 +10,7 @@
         output: false,
         isGenerating: false,
     }">
-        <div class="bg-white border border-neutral-200 rounded-lg p-6 pt-3">
+        <div class="bg-white border border-gray-200 rounded-lg p-6 pt-3">
             <h2 class="font-semibold">Template</h2>
 
             <div class="space-y-4 bg-white mt-3 rounded-xl">
@@ -18,7 +18,7 @@
             </div>
         </div>
         <!-- Main Editor Section -->
-        <div class="bg-white border border-neutral-200 rounded-lg p-6">
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
             <h2 class="font-semibold">Your idea here</h2>
 
             <!-- Editor -->
@@ -55,7 +55,7 @@
                         await $wire.resetAll();
                         output = false;
                     "
-                    class="flex items-center gap-2 px-4 py-2 bg-neutral-100 rounded-lg hover:bg-neutral-200 transition-colors">
+                    class="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" class="size-4">
@@ -68,16 +68,16 @@
 
         </div>
 
-        <div class="bg-white border border-neutral-200 rounded-lg overflow-hidden">
+        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
             <!-- Tips Section -->
             <div x-show='output' x-cloak>
                 <div class="flex justify-between items-center px-3 py-2">
                     <h2 class="text-lg font-semibold">Output</h2>
-                    <div class="flex gap-3 items-center text-neutral-500 px-3">
+                    <div class="flex gap-3 items-center text-gray-500 px-3">
                         <span wire:key="char-count" class="text-xs">{{ strlen($post) }}/3000 characters</span>
-                        <div class="w-px bg-neutral-100 h-6"></div>
+                        <div class="w-px bg-gray-100 h-6"></div>
                         <button @click="navigator.clipboard.writeText($wire.output);"
-                            class="flex items-center gap-1 text-neutral-600 text-xs hover:text-neutral-700">
+                            class="flex items-center gap-1 text-gray-600 text-xs hover:text-gray-700">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="size-3">
@@ -88,7 +88,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="prose prose-sm max-w-none p-3 rounded mb-3 bg-neutral-100 mx-3" wire:stream="output">
+                <div class="prose prose-sm max-w-none p-3 rounded mb-3 bg-gray-100 mx-3" wire:stream="output">
                     {!! Str::markdown($output, ['renderer' => [ 'soft_break' => "<br />\n"]]) !!}
                 </div>
             </div>

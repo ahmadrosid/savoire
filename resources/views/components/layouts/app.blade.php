@@ -18,13 +18,13 @@
     <x-trix-styles />
 </head>
 
-<body class="h-screen bg-neutral-50 overflow-y-auto scrollbar-hide">
+<body class="h-screen bg-gray-50 overflow-y-auto scrollbar-hide">
     <nav class="bg-white border-b snap-start">
         <div class="max-w-4xl mx-auto">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo/Brand -->
                 <div class="flex items-center">
-                    <a href="/" class="text-xl font-bold text-neutral-900">
+                    <a href="/" class="text-xl font-bold text-gray-900">
                         Savoire
                     </a>
                 </div>
@@ -32,15 +32,15 @@
                 <!-- Navigation Links -->
                 <div class="flex space-x-4">
                     <a href="/create"
-                        class="px-3 py-2 rounded-md text-sm font-medium text-neutral-900 hover:bg-neutral-100 hover:text-neutral-900 transition-colors">
+                        class="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-gray-900 transition-colors">
                         Create
                     </a>
                     <a href="/copy-cat"
-                        class="px-3 py-2 rounded-md text-sm font-medium text-neutral-900 hover:bg-neutral-100 hover:text-neutral-900 transition-colors">
+                        class="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-gray-900 transition-colors">
                         Copy Cat
                     </a>
                     <a href="/history"
-                        class="px-3 py-2 rounded-md text-sm font-medium text-neutral-900 hover:bg-neutral-100 hover:text-neutral-900 transition-colors">
+                        class="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-gray-900 transition-colors">
                         History
                     </a>
                 </div>
