@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\FirebaseController;
 use App\Livewire\CopyCat;
 use App\Livewire\CreatePost;
 use App\Livewire\EditPost;
@@ -21,7 +21,7 @@ $routes = function() {
     })->name('post.detail');
 };
 
-Route::post('/login/google/callback', [LoginController::class, 'handleCallback'])->name('login.google.callback');
+Route::post('/login/google/callback', [FirebaseController::class, 'handleCallback'])->name('login.google.callback');
 
 !app()->environment('production') 
     ? Route::middleware('auth')->group($routes) 

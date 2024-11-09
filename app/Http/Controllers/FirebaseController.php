@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 use Kreait\Laravel\Firebase\Facades\Firebase;
 use Throwable;
 
-class LoginController extends Controller
+class FirebaseController extends Controller
 {
     protected $redirectTo = '/home';
 
