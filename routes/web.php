@@ -23,8 +23,6 @@ $routes = function() {
 
 Route::post('/login/google/callback', [FirebaseController::class, 'handleCallback'])->name('login.google.callback');
 
-app()->environment('production') 
-    ? Route::middleware('auth')->group($routes) 
-    : Route::group([], $routes);
+Route::middleware('auth')->group($routes);
 
 require __DIR__ . '/auth.php';
