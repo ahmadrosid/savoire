@@ -29,6 +29,7 @@ class FirebaseController extends Controller
                 'email' => $data->get('email'),
                 'password' => Str::random(16),
                 'email_verified_at' => now(),
+                'google_id' => $data->get('id'),
             ]);
             Auth::login($user);
             return redirect($this->redirectTo);
