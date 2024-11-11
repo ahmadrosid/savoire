@@ -24,7 +24,9 @@ class FirebaseController extends Controller
         try {
             $verifiedIdToken = Firebase::auth()->verifyIdToken($socialTokenId);
             $data = $verifiedIdToken->claims();
-            $user = User::create([
+            $user = User::firstOrCreate([
+                'name' => $data->get('name'),
+            ],[
                 'name' => $data->get('name'),
                 'email' => $data->get('email'),
                 'password' => Str::random(16),
@@ -35,10 +37,14 @@ class FirebaseController extends Controller
             return redirect($this->redirectTo);
         } catch (\InvalidArgumentException $e) {
             report($e);
-            return redirect()->route('login');
+            return redirect()
+                ->route('login')
+                ->with('error', 'Invalid token');
         } catch (Throwable $e) {
             report($e);
-            return redirect()->route('login');
+            return redirect()
+                ->route('login')
+                ->with('error', 'Gagal login, silahkan hubungi admin!');
         }
     }
 }
