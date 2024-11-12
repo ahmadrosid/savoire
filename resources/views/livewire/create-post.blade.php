@@ -79,7 +79,9 @@
                     <div class="flex gap-3 items-center text-gray-500 px-3">
                         <span wire:key="char-count" class="text-xs">{{ strlen($post) }}/3000 characters</span>
                         <div class="w-px bg-gray-100 h-6"></div>
-                        <copy-icon onclick="navigator.clipboard.writeText($wire.output);" class="!inline-block"></copy-icon>
+                        <button x-on:click="navigator.clipboard.writeText($wire.output)">
+                            <copy-icon></copy-icon>
+                        </button>
                     </div>
                 </div>
                 <div class="prose prose-sm max-w-none p-3 rounded mb-3 bg-gray-100 mx-3" wire:stream="output">
