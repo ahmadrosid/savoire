@@ -18,8 +18,13 @@
         "vite": "^5.0"
     },
     "dependencies": {
+        "@sveltejs/vite-plugin-svelte": "^4.0.1",
         "@tailwindcss/typography": "^0.5.15",
+        "bits-ui": "^0.21.16",
         "copy-icon": "^1.0.1",
+        "glob": "^11.0.0",
+        "lucide-svelte": "^0.460.1",
+        "svelte": "^5.2.2",
         "tailwind-scrollbar-hide": "^1.1.7"
     }
 }

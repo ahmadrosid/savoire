@@ -14,13 +14,17 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- Styles / Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite([
+        'resources/css/app.css', 
+        'resources/js/app.js',
+        'resources/js/mingle.svelte.js'
+    ])
     <x-trix-styles />
 </head>
 
 <body class="h-screen bg-gray-50 overflow-y-auto scrollbar-hide">
     <nav class="bg-white border-b snap-start">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-4xl mx-auto px-6">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo/Brand -->
                 <div class="flex items-center">

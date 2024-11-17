@@ -12,7 +12,11 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite([
+            'resources/css/app.css', 
+            'resources/js/app.js',
+            'resources/js/mingle.svelte.js'
+        ])
         <x-rich-text::styles theme="richtextlaravel" data-turbo-track="false" />
     </head>
     <body class="font-sans antialiased">

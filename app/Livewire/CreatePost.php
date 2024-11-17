@@ -46,6 +46,10 @@ class CreatePost extends Component
 
     public function render()
     {
-        return view('livewire.create-post');
+        return <<<HTML
+        <div>
+            <div data-svelte="CreatePost.svelte"></div>
+        </div>
+        HTML;
     }
 }
