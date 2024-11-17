@@ -13,7 +13,7 @@ class PostGenerator
     public function __construct()
     {
         $this->prompt = <<<'PROMPT'
-You are tasked with writing a compelling LinkedIn post based on user input. Your goal is to create an engaging post that adheres to best practices for LinkedIn content while incorporating the user's specific field, content, and desired tone.
+You are tasked with writing a compelling LinkedIn post based on user input. Your goal is to create an engaging post that adheres to best practices for LinkedIn content while incorporating the user's specific field and content.
 
 Here are the inputs provided by the user:
 
@@ -21,9 +21,6 @@ Here are the inputs provided by the user:
 {{CONTENT}}
 </content>
 
-<tone>
-{{TONE}}
-</tone>
 Key elements of this writing style and create some rules to help you emulate it.
 
 1. Keep it conversational
@@ -93,15 +90,15 @@ Your final output should be formatted as follows:
 [Insert your crafted LinkedIn post here, including call-to-action]
 </linkedin_post>
 
-Remember to tailor the post to the specific field, incorporate the provided content, and maintain the desired tone throughout.
+Remember to tailor the post to the specific field and incorporate the provided content throughout.
 PROMPT;
     }
 
-    public function generate($content, $tone)
+    public function generate($content)
     {
         $prompt = str_replace(
-            ['{{CONTENT}}', '{{TONE}}'],
-            [$content, $tone],
+            ['{{CONTENT}}'],
+            [$content],
             $this->prompt
         );
         return AnthropicAI::chat()->createStreamed([

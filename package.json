@@ -24,7 +24,10 @@
         "copy-icon": "^1.0.1",
         "glob": "^11.0.0",
         "lucide-svelte": "^0.460.1",
+        "openai": "^4.72.0",
+        "remark-breaks": "^4.0.0",
         "svelte": "^5.2.2",
+        "svelte-exmarkdown": "^4.0.1",
         "tailwind-scrollbar-hide": "^1.1.7"
     }
 }

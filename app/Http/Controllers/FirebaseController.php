@@ -13,12 +13,7 @@ class FirebaseController extends Controller
 {
     protected $redirectTo = '/home';
 
-    public function username()
-    {
-        return 'email';
-    }
-
-    public function handleCallback(Request $request)
+    public function __invoke(Request $request)
     {
         $socialTokenId = $request->input('social-login-tokenId', '');
         try {

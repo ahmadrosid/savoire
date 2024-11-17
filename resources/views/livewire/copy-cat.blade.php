@@ -76,7 +76,7 @@
                     <div class="flex gap-3 items-center text-gray-500 px-3">
                         <span wire:key="char-count" class="text-xs">{{ strlen($post) }}/3000 characters</span>
                         <div class="w-px bg-gray-100 h-6"></div>
-                        <button x-on:click="navigator.clipboard.writeText($wire.output)">
+                        <button x-onclick="navigator.clipboard.writeText($wire.output)">
                             <copy-icon></copy-icon>
                         </button>
                     </div>

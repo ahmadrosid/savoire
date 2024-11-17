@@ -11,7 +11,6 @@ class Post extends Model
 
     protected $fillable = [
         'content',
-        'tone',
         'output'
     ];
 }
