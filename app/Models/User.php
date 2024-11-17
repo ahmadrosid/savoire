@@ -47,4 +47,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function getIsAdminAttribute()
+    {
+        $adminEmails = explode(',', env('ADMIN_EMAILS', ''));
+        return in_array($this->email, $adminEmails);
+    }
+
 }

@@ -152,7 +152,7 @@
                 <textarea
                     bind:value={input.template}
                     placeholder="Paste the post whose style you want to copy..."
-                    class="w-full h-32 px-3 py-2 text-base text-gray-700 placeholder-gray-400 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    class="w-full h-32 px-3 py-2 text-base text-gray-700 placeholder-gray-400 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
                 ></textarea>
             </div>
 
@@ -163,7 +163,7 @@
                 <textarea
                     bind:value={input.post}
                     placeholder="Write your content here..."
-                    class="w-full h-32 px-3 py-2 text-base text-gray-700 placeholder-gray-400 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    class="w-full h-32 px-3 py-2 text-base text-gray-700 placeholder-gray-400 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
                 ></textarea>
             </div>
 

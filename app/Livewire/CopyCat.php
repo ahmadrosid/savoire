@@ -28,7 +28,7 @@ class CopyCat extends Component
     public function getTemplates()
     {
         return [
-            'templates' => Template::with('category')->get(),
+            'templates' => Template::with('category')->orderBy('id','desc')->get(),
             'categories' => Category::all()
         ];
     }

@@ -35,6 +35,12 @@
 
                 <!-- Navigation Links -->
                 <div class="flex space-x-4">
+                    @if (auth()->user()->is_admin)
+                        <a href="/admin/templates"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-gray-900 transition-colors">
+                            Templates
+                        </a>
+                    @endif
                     <a href="/create"
                         class="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-gray-900 transition-colors">
                         Create
