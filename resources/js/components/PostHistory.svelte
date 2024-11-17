@@ -1,7 +1,4 @@
 <script>
-    import { Button } from "bits-ui";
-    import TrashIcon from "lucide-svelte/icons/trash";
-
     let { wire, dataset } = $props();
     let posts = $state(dataset.posts.data);
     let links = $state(dataset.posts.links);
@@ -45,7 +42,7 @@
         <div class="space-y-3">
             <p class="opacity-60">No post history yet!</p>
             <a href="/create"
-                class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:opacity-80 transition-colors">
+                class="inline-flex items-center gap-2 px-4 py-2 bg-sky-600 text-white rounded-lg hover:opacity-80 transition-colors">
                 Let's create
             </a>
         </div>
@@ -96,7 +93,7 @@
                             {#if link.url}
                                 <button
                                     onclick={() => handlePageChange(link)}
-                                    class="relative inline-flex items-center px-4 py-2 -ml-px text-sm font-medium {link.active ? 'bg-sky-50' : 'text-gray-500 bg-white hover:bg-gray-50'} border border-gray-300 leading-5 focus:z-10 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 transition ease-in-out duration-150 {link.label === 'Previous' ? 'rounded-l-md' : ''} {link.label === 'Next' ? 'rounded-r-md' : ''} {isLoading ? 'opacity-50 cursor-not-allowed' : ''}"
+                                    class="relative inline-flex items-center px-4 py-2 -ml-px text-sm font-medium {link.active ? 'bg-sky-50' : 'text-gray-500 bg-white hover:bg-gray-50'} border border-gray-300 leading-5 focus:z-10 focus:outline-none focus:ring ring-gray-300 focus:border-sky-300 transition ease-in-out duration-150 {link.label === 'Previous' ? 'rounded-l-md' : ''} {link.label === 'Next' ? 'rounded-r-md' : ''} {isLoading ? 'opacity-50 cursor-not-allowed' : ''}"
                                     disabled={link.active || isLoading}>
                                     {@html link.label}
                                 </button>

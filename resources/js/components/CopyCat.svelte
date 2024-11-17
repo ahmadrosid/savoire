@@ -2,10 +2,11 @@
     import OpenAI from "openai";
     import { Button } from "bits-ui";
     import SparkleIcon from "lucide-svelte/icons/sparkle";
-    import TrashIcon from "lucide-svelte/icons/trash";
     import CopyIcon from "lucide-svelte/icons/copy";
     import CheckIcon from "lucide-svelte/icons/check";
+    import RotateCwIcon from 'lucide-svelte/icons/rotate-cw';
     import Markdown from "../ui/Markdown.svelte";
+    import TemplateSelector from "../ui/TemplateSelector.svelte";
 
     let { wire, dataset } = $props();
     let isGenerating = $state(false);
@@ -20,6 +21,17 @@
     });
 
     let output = $state("");
+    let showTemplateDialog = $state(false);
+
+    // Parse templates data from data attribute
+    let templatesData = dataset.templates;
+    let templates = templatesData.templates;
+    let categories = templatesData.categories;
+
+    function selectTemplate(template) {
+        input.template = template.content;
+        showTemplateDialog = false;
+    }
 
     async function handleGenerate() {
         errorMessage = "";
@@ -115,6 +127,24 @@
         {/if}
 
         <div class="space-y-4">
+            <div class="flex justify-between items-center">
+                <h2 class="text-lg font-semibold">Copy Cat</h2>
+                <button 
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+                    onclick={() => showTemplateDialog = true}
+                >
+                    <SparkleIcon class="w-4 h-4" />
+                    <span>Select Template</span>
+                </button>
+            </div>
+
+            <TemplateSelector
+                {templates}
+                {categories}
+                onSelect={selectTemplate}
+                bind:open={showTemplateDialog}
+            />
+
             <div>
                 <div class="block text-sm font-medium text-gray-700 mb-1">
                     Template Post (Style to Copy)
@@ -160,7 +190,7 @@
                     class="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
                 >
                     <div class="flex items-center space-x-2">
-                        <TrashIcon class="w-4 h-4" />
+                        <RotateCwIcon class="w-4 h-4" />
                         <span>Reset</span>
                     </div>
                 </button>

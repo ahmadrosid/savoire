@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Models\Template;
+use App\Models\Category;
 use Livewire\Component;
 
 class CopyCat extends Component
@@ -23,13 +25,23 @@ class CopyCat extends Component
         $this->template = '';
     }
 
+    public function getTemplates()
+    {
+        return [
+            'templates' => Template::with('category')->get(),
+            'categories' => Category::all()
+        ];
+    }
+
     public function render()
     {
+        $templates = htmlspecialchars(json_encode($this->getTemplates()), ENT_QUOTES, 'UTF-8');
         return <<<TEXT
         <div>
             <div 
                 data-svelte="CopyCat.svelte" 
                 data-csrf="{{ csrf_token() }}"
+                data-templates="$templates"
             ></div>
         </div>
         TEXT;
