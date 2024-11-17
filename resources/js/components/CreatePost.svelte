@@ -22,7 +22,7 @@
     }
 </script>
 
-<div>
+<div class="px-6">
     <div class="space-y-2 mb-3">
         <h1 class="text-3xl font-bold">Create LinkedIn Post</h1>
         <p class="text-gray-500">
