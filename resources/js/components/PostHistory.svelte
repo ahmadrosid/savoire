@@ -58,7 +58,7 @@
                     {post.output.slice(0, 300)}{post.output.length > 300 ? '...' : ''}
                 </div>
                 <p class="px-3 pb-3 text-sm inline-flex gap-2 items-center">
-                    <a class="hover:underline" href={`/post/${post.id}/edit`}>Edit</a>
+                    <a class="hover:underline" href={`/post/edit/${post.id}`}>Edit</a>
                     <span class="h-4 w-px bg-gray-200"></span>
                     <a class="hover:underline" href={`/post/${post.id}`}>View</a>
                     <span class="h-4 w-px bg-gray-200"></span>
