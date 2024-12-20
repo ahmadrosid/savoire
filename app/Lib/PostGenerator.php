@@ -14,6 +14,7 @@ class PostGenerator
     {
         $this->prompt = <<<'PROMPT'
 You are tasked with writing a compelling LinkedIn post based on user input. Your goal is to create an engaging post that adheres to best practices for LinkedIn content while incorporating the user's specific field and content.
+Please write in the same language that the user uses in their input.
 
 Here are the inputs provided by the user:
 

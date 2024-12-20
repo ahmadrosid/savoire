@@ -11,7 +11,6 @@ class StreamController extends Controller
 {
     public function __invoke(Request $request)
     {
-        logger()->info('Start streaming controller');
         return response()->stream(function () use ($request) {
             try {
                 $input = $request->validate([
