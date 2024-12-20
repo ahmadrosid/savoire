@@ -13,7 +13,7 @@ use App\Livewire\Admin\TemplateManager;
 
 $routes = function() {
     Route::get('/', CreatePost::class);
-    Route::get('/home', CreatePost::class);
+    Route::get('/home', CreatePost::class)->name('home');
     Route::get('/create', CreatePost::class)->name('create');
     Route::get('/copy-cat', CopyCat::class)->name('copy-cat');
     Route::get('/history', PostHistory::class)->name('history');
