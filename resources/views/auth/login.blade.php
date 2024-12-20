@@ -84,14 +84,14 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
         import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
         const firebaseConfig = {
-          apiKey: "AIzaSyA06wPu58r-hFpp-uStc7L9egoqab_2A6w",
-          authDomain: "savoire-app.firebaseapp.com",
-          projectId: "savoire-app",
-          storageBucket: "savoire-app.firebasestorage.app",
-          messagingSenderId: "172982158357",
-          appId: "1:172982158357:web:d4d563df54aaa833ae3a1c"
+          apiKey: "{{ env('FIREBASE_API_KEY') }}",
+          authDomain: "{{ env('FIREBASE_AUTH_DOMAIN') }}",
+          projectId: "{{ env('FIREBASE_PROJECT_ID') }}",
+          storageBucket: "{{ env('FIREBASE_STORAGE_BUCKET') }}",
+          messagingSenderId: "{{ env('FIREBASE_MESSAGING_SENDER_ID') }}",
+          appId: "{{ env('FIREBASE_APP_ID') }}"
         };
-      
+
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
 
@@ -100,7 +100,7 @@
             console.log('loginWithGoogle')
             var socialProvider = null;
             var googleCallbackLink = '/login/google/callback';
-        
+
             signInWithPopup(auth, googleProvider).then(function(result) {
                 result.user.getIdToken().then(function(result) {
                     console.log(result)
