@@ -29,6 +29,10 @@ $routes = function() {
 
 Route::post('/login/google/callback', FirebaseController::class)->name('login.google.callback');
 
+Route::post('/logout', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'destroy'])
+    ->name('logout')
+    ->middleware('auth');
+
 Route::middleware('auth')->group($routes);
 
 require __DIR__ . '/auth.php';

@@ -53,6 +53,15 @@
                         class="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-gray-900 transition-colors">
                         History
                     </a>
+                    
+                    <!-- Logout Button -->
+                    <form method="POST" action="{{ route('logout') }}" class="inline-block">
+                        @csrf
+                        <button type="submit" 
+                            class="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-gray-900 transition-colors">
+                            Sign Out
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

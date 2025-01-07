@@ -28,10 +28,15 @@
             <!-- Remember Me & Forgot Password -->
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <input type="checkbox" id="remember-me" class="h-4 w-4 text-sky-600 rounded border-gray-300">
-                    <label for="remember-me" class="ml-2 block text-sm text-gray-700">Remember me</label>
+                    <input id="remember" name="remember" type="checkbox" class="h-4 w-4 text-sky-600 focus:ring-sky-500 border-gray-300 rounded">
+                    <label for="remember" class="ml-2 block text-sm text-gray-900">Remember me</label>
                 </div>
-                <a href="#" class="text-sm text-sky-600 hover:text-sky-500">Forgot password?</a>
+                
+                @if (Route::has('password.request'))
+                    <a href="{{ route('password.request') }}" class="text-sm font-medium text-sky-600 hover:text-sky-500">
+                        Forgot your password?
+                    </a>
+                @endif
             </div>
 
             <!-- Sign In Button -->
