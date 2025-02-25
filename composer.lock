@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "706234044fe1bbb9d46e6e0eb2626c39",
+    "content-hash": "ea2a3892493dcf68de92af8add735b95",
     "packages": [
         {
             "name": "ahmadrosid/laravel-anthropic",
@@ -4856,66 +4856,6 @@
             "time": "2024-11-27T12:13:42+00:00"
         },
         {
-            "name": "spatie/laravel-package-tools",
-            "version": "1.16.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-package-tools.git",
-                "reference": "c7413972cf22ffdff97b68499c22baa04eddb6a2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/c7413972cf22ffdff97b68499c22baa04eddb6a2",
-                "reference": "c7413972cf22ffdff97b68499c22baa04eddb6a2",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "^9.28|^10.0|^11.0",
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.5",
-                "orchestra/testbench": "^7.7|^8.0",
-                "pestphp/pest": "^1.22",
-                "phpunit/phpunit": "^9.5.24",
-                "spatie/pest-plugin-test-time": "^1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\LaravelPackageTools\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Tools for creating Laravel packages",
-            "homepage": "https://github.com/spatie/laravel-package-tools",
-            "keywords": [
-                "laravel-package-tools",
-                "spatie"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/laravel-package-tools/issues",
-                "source": "https://github.com/spatie/laravel-package-tools/tree/1.16.5"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-08-27T18:56:10+00:00"
-        },
-        {
             "name": "symfony/cache",
             "version": "v7.2.3",
             "source": {
@@ -7447,139 +7387,6 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/v2.3.0"
             },
             "time": "2024-12-21T16:25:41+00:00"
-        },
-        {
-            "name": "tonysm/globalid-laravel",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tonysm/globalid-laravel.git",
-                "reference": "911a0219a91079ea5ea889b9e2cf71b0134938bf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tonysm/globalid-laravel/zipball/911a0219a91079ea5ea889b9e2cf71b0134938bf",
-                "reference": "911a0219a91079ea5ea889b9e2cf71b0134938bf",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "^8.47|^9.0|^10.0|^11.0",
-                "php": "^8.0",
-                "spatie/laravel-package-tools": "^1.9.2"
-            },
-            "require-dev": {
-                "nunomaduro/collision": "^7.0|^8.1",
-                "orchestra/testbench": "^8.0|^9.0",
-                "phpunit/phpunit": "^10.5",
-                "vimeo/psalm": "^5.2"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Tonysm\\GlobalId\\GlobalIdServiceProvider"
-                    ],
-                    "aliases": {
-                        "GlobalId": "Tonysm\\GlobalId\\GlobalIdFacade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Tonysm\\GlobalId\\": "src",
-                    "Tonysm\\GlobalId\\Database\\Factories\\": "database/factories"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tony Messias",
-                    "email": "tonysm@hey.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Identify app models with a URI. Inspired by the globalid gem.",
-            "homepage": "https://github.com/tonysm/globalid-laravel",
-            "keywords": [
-                "globalid",
-                "globalid-laravel",
-                "laravel",
-                "tonysm"
-            ],
-            "support": {
-                "issues": "https://github.com/tonysm/globalid-laravel/issues",
-                "source": "https://github.com/tonysm/globalid-laravel/tree/1.2.0"
-            },
-            "time": "2024-03-08T01:14:02+00:00"
-        },
-        {
-            "name": "tonysm/rich-text-laravel",
-            "version": "3.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tonysm/rich-text-laravel.git",
-                "reference": "27792adce3413af3bcecb0e608e7879259d584e3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tonysm/rich-text-laravel/zipball/27792adce3413af3bcecb0e608e7879259d584e3",
-                "reference": "27792adce3413af3bcecb0e608e7879259d584e3",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "^10.0|^11.0",
-                "php": "^8.2",
-                "spatie/laravel-package-tools": "^1.9.2",
-                "tonysm/globalid-laravel": "^1.1"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.10",
-                "livewire/livewire": "^3.4",
-                "nunomaduro/collision": "^6.0|^8.0",
-                "orchestra/testbench": "^8.21|^9.0",
-                "orchestra/workbench": "^8.0|^9.0",
-                "phpunit/phpunit": "^10.5",
-                "symfony/html-sanitizer": "^7.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Tonysm\\RichTextLaravel\\RichTextLaravelServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Tonysm\\RichTextLaravel\\": "src",
-                    "Tonysm\\RichTextLaravel\\Database\\Factories\\": "database/factories"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tony Messias",
-                    "email": "tonysm@hey.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Integrates Trix content with Laravel",
-            "homepage": "https://github.com/tonysm/rich-text-laravel",
-            "keywords": [
-                "laravel",
-                "rich-text-laravel"
-            ],
-            "support": {
-                "issues": "https://github.com/tonysm/rich-text-laravel/issues",
-                "source": "https://github.com/tonysm/rich-text-laravel/tree/3.2.1"
-            },
-            "time": "2024-10-31T15:28:52+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
