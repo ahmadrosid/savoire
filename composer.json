@@ -8,7 +8,7 @@
         "php": "^8.2",
         "ahmadrosid/laravel-anthropic": "^1.0",
         "html2text/html2text": "^4.3",
-        "kreait/laravel-firebase": "^5.9",
+        "kreait/laravel-firebase": "^6.0",
         "laravel/framework": "^11.44",
         "laravel/tinker": "^2.9",
         "league/html-to-markdown": "^5.1",
