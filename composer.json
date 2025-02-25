@@ -9,7 +9,7 @@
         "ahmadrosid/laravel-anthropic": "^1.0",
         "html2text/html2text": "^4.3",
         "kreait/laravel-firebase": "^5.9",
-        "laravel/framework": "^11.9",
+        "laravel/framework": "^11.44",
         "laravel/tinker": "^2.9",
         "league/html-to-markdown": "^5.1",
         "livewire/livewire": "^3.5",
