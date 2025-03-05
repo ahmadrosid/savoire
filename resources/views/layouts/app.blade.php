@@ -17,7 +17,6 @@
             'resources/js/app.js',
             'resources/js/mingle.svelte.js'
         ])
-        <x-rich-text::styles theme="richtextlaravel" data-turbo-track="false" />
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">

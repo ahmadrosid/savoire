@@ -8,7 +8,7 @@ class PostGenerator
 {
     public string $prompt;
     public string $prompt_copy_cat;
-    public string $model = 'claude-3-7-sonnet-20250219';
+    public string $model = 'claude-3-opus-20240229';
 
     public function __construct()
     {
