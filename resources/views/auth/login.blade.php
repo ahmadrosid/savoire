@@ -113,7 +113,7 @@
                     document.getElementById('social-login-form').submit();
                 });
             }).catch(function(error) {
-                console.log(error);
+                console.log("Failed to login with Google", { error });
             });
         }
         window.loginWithGoogle = () => {
